@@ -1,36 +1,40 @@
-document.getElementById('login-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting the default way
-    
-    // Get form values
+const file = './data.json';
+
+async function fetchUserData() {
+    try {
+        let response = await fetch(file);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching user data:', error);
+        throw error;
+    }
+}
+
+document.getElementById('login-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
     const email = document.getElementById('login-email').value;
     const password = document.getElementById('login-password').value;
 
-    // Basic validation
     if (email === '' || password === '') {
         alert('Please fill in all fields.');
         return;
     }
 
-    // Send data to the server
-    fetch('/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
+    try {
+        let users = await fetchUserData();
+        const user = users.find(user => user.email === email && user.password === password);
+
+        if (user) {
             alert('Login successful!');
-            // Redirect to the first page (index.html)
             window.location.href = '../Homepage/index.html';
         } else {
-            alert('Login failed: ' + data.message);
+            alert('Login failed: Invalid email or password');
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred.');
-    });
+    } catch (error) {
+        alert('Login failed.');
+    }
 });
