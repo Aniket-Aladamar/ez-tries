@@ -30,7 +30,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
 
         if (user) {
             alert('Login successful!');
-            window.location.href = '../Homepage/index.html';
+            window.location.href = './Homepage/index.html';
         } else {
             alert('Login failed: Invalid email or password');
         }
