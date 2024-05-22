@@ -1,52 +1,50 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const fs = require('fs');
+const fetch = require('node-fetch');
 const path = require('path');
 
 const app = express();
 const PORT = 3000;
 
+const DATA_URL = 'https://raw.githubusercontent.com/Aniket-Aladamar/ez-tries/main/data.json';
+
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '.')));
 
+// Function to fetch user data from GitHub
+const fetchUserData = async () => {
+    try {
+        const response = await fetch(DATA_URL);
+        if (!response.ok) throw new Error('Network response was not ok');
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching user data:', error);
+        throw error;
+    }
+};
+
 // Endpoint to handle form submission
-app.post('/signup', (req, res) => {
+app.post('/signup', async (req, res) => {
     const { fullName, email, password, rememberMe } = req.body;
 
-    // Read the existing data from data.json
-    fs.readFile('data.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).json({ success: false, message: 'Error reading data file' });
-        }
-
-        const users = JSON.parse(data);
+    try {
+        const users = await fetchUserData();
         users.push({ fullName, email, password, rememberMe });
 
-        // Write the updated data back to data.json
-        fs.writeFile('data.json', JSON.stringify(users, null, 2), (err) => {
-            if (err) {
-                console.error(err);
-                return res.status(500).json({ success: false, message: 'Error writing data file' });
-            }
-
-            res.json({ success: true });
-        });
-    });
+        // Here you should normally save the updated users array back to the GitHub repository.
+        // Since GitHub raw URLs are read-only, we'll just respond with success for demonstration purposes.
+        res.json({ success: true });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Error handling signup' });
+    }
 });
 
 // Endpoint to handle login requests
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
-    // Read the existing data from data.json
-    fs.readFile('data.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).json({ success: false, message: 'Error reading data file' });
-        }
-
-        const users = JSON.parse(data);
+    try {
+        const users = await fetchUserData();
         const user = users.find(user => user.email === email && user.password === password);
 
         if (user) {
@@ -54,19 +52,19 @@ app.post('/login', (req, res) => {
         } else {
             res.json({ success: false, message: 'Invalid email or password' });
         }
-    });
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Error handling login' });
+    }
 });
 
 // Endpoint to retrieve all users (for testing purposes)
-app.get('/users', (req, res) => {
-    fs.readFile('data.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).json({ success: false, message: 'Error reading data file' });
-        }
-
-        res.json(JSON.parse(data));
-    });
+app.get('/users', async (req, res) => {
+    try {
+        const users = await fetchUserData();
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ success: false, message: 'Error fetching users' });
+    }
 });
 
 app.listen(PORT, () => {
