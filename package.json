@@ -1,17 +1,13 @@
 {
-  "name": "login",
+  "name": "my-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "description": "My Vercel App",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.19.2"
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
   }
 }
