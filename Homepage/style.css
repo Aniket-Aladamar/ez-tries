@@ -1,0 +1,367 @@
+.container {
+    background-color: #e7effa;
+    display: flex;
+    max-width:fit-content;
+    height: 100%;
+    padding-bottom: 26px;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; 
+}
+
+
+.header {
+    background: linear-gradient(13deg, #143d69 9.51%, #2b5088 115.72%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 27px 19px 10px;
+}
+
+.header-content {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    justify-content: space-between;
+}
+
+.greeting {
+    font-family: Inter, sans-serif;
+    margin-left: 20px;
+}
+
+.profile-image {
+    aspect-ratio: 1;
+    object-fit: cover;
+    width: 49px;
+    align-self: start;
+    border-radius: 50%;
+}
+
+.welcome-message {
+    margin-top: 13px;
+    font: 300 17px Inter, sans-serif;
+    margin-left: 20px;
+}
+
+.usage-summary {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 354px;
+    align-items: start;
+    gap: 20px;
+    color: #000;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.date {
+    align-self: stretch;
+    margin: auto 0;
+    font: 300 14px Inter, sans-serif;
+}
+
+.usage-details {
+    display: flex;
+    margin-top: 6px;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+.cost {
+    font: 700 14px Inter, sans-serif;
+}
+
+.energy-used {
+    margin-top: 6px;
+    font: 300 8px Inter, sans-serif;
+}
+
+.usage-status {
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    gap: 10px;
+    font-size: 8px;
+    font-weight: 300;
+    white-space: nowrap;
+    padding: 8px;
+}
+
+.status-text {
+    font-family: Inter, sans-serif;
+}
+
+.status-icon {
+    aspect-ratio: 1.2;
+    object-fit: cover;
+    width: 6px;
+    stroke-width: 1px;
+    stroke: #21477a;
+    border: 1px solid rgba(33, 71, 122, 1);
+    align-self: start;
+}
+
+.card {
+    border-radius: 9px;
+    box-shadow: 10px 13px 10px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    margin-top: 24px;
+    width: 100%;
+    max-width: 319px;
+    padding-right: 9px;
+    gap: 20px;
+    color: #000;
+    font-weight: 300;
+}
+
+.card-image {
+    border-radius: 9px;
+    box-shadow: 10px 13px 10px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
+    padding: 9px 0 15px;
+}
+
+.card-icon {
+    aspect-ratio: 1.25;
+    object-fit: contain;
+    width: 54px;
+    align-self: start;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+    padding: 0 20px;
+}
+
+.card-title {
+    font: 11px Inter, sans-serif;
+}
+
+.card-description {
+    font: 10px Inter, sans-serif;
+}
+
+.reward-info {
+    display: flex;
+    align-items: start;
+    gap: 6px;
+    font-size: 8px;
+    margin: auto 0;
+}
+
+.reward-icon {
+    aspect-ratio: 1.25;
+    object-fit: contain;
+    width: 54px;
+    align-self: start;
+}
+
+.reward-content {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+    padding: 0 20px;
+}
+
+.reward-title {
+    font: 11px Inter, sans-serif;
+}
+
+.reward-description {
+    font: 10px Inter, sans-serif;
+}
+
+
+.appliance-card {
+    border-radius: 18px;
+    box-shadow: 10px 13px 10px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 319px;
+    flex-direction: column;
+    padding: 18px;
+}
+
+.appliance-header {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    color: #0f2c4a;
+    font-weight: 400;
+    justify-content: space-between;
+}
+
+.appliance-name {
+    font-family: Inter, sans-serif;
+}
+
+.appliance-status {
+    font-family: Inter, sans-serif;
+    font-size: small;
+    
+}
+
+.appliance-usage-bar {
+    border-radius: 15px;
+    background-color: #e7effa;
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.appliance-usage-level {
+    border-radius: 0px 0px 7px 7px;
+    background-color: #f58787;
+    height: 14px;
+}
+
+.appliance-card.air-conditioner .appliance-usage-level {
+    background-color: #ffbe71;
+}
+
+.appliance-card.water-heater .appliance-usage-level {
+    background-color: #4d83cd;
+}
+
+.section-divider {
+    aspect-ratio: 2.27;
+    object-fit: cover;
+    width: 16px;
+    margin-top: 15px;
+}
+
+.weekly-average {
+    width: 100%;
+    display: flex;
+    margin-top: 15px;
+    padding-left: 19px;
+    flex-direction: column;
+}
+
+.section-title {
+    color: #090909;
+    font-family:Inter, sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.category-cards {
+    display: flex;
+    margin-top: 13px;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.category-card {
+    border-radius: 18px;
+    box-shadow: 10px 13px 10px 0px rgba(0, 0, 0, 0.25);
+    background-color: #cadbf2;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 12px 12px;
+}
+
+.category-name {
+    color: #0f2c4a;
+    font: 400 12px Inter, sans-serif;
+}
+
+.category-details {
+    display: flex;
+    margin-top: 25px;
+    align-items: start;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.category-icon-wrapper {
+    display: flex;
+    margin-top: 4px;
+    flex-direction: column;
+    color: #0f2c4a;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.category-icon {
+    aspect-ratio: 0.61;
+    object-fit: cover;
+    width: 42px;
+    align-self: center;
+}
+
+.category-usage {
+    margin-top: 28px;
+    font: 24px Inter, sans-serif;
+}
+
+.category-unit {
+    margin-top: 6px;
+    font: 8px Inter, sans-serif;
+}
+
+.category-usage-bar {
+    border-radius: 15px;
+    background-color: #e7effa;
+    display: flex;
+    flex-direction: column;
+}
+
+.category-usage-level {
+    border-radius: 0px 0px 7px 7px;
+    background-color: #284061;
+    height: 71px;
+}
+
+.category-card.light .category-icon {
+    aspect-ratio: 1.19;
+    width: 56px;
+}
+
+.category-card.light .category-usage {
+    margin-top: 45px;
+}
+
+.category-card.light .category-unit {
+    margin-top: 8px;
+}
+
+.category-card.light .category-usage-level {
+    height: 109px;
+    padding-top: 16px;
+}
+
+.category-card.entertainment {
+    align-items: start;
+    padding: 24px 0 12px 18px;
+}
+
+.category-card.entertainment .category-icon {
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: #e7effa;
+    margin-top: 26px;
+    width: 44px;
+    height: 44px;
+}
+
+.category-card.entertainment .category-usage {
+    margin-top: 55px;
+}
+
+.category-card.entertainment .category-unit {
+    margin-top: 8px;
+}

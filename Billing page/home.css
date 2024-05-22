@@ -1,0 +1,254 @@
+.container {
+    background-color: #e7effa;
+    display: flex;
+    max-width: 480px;
+    width: 100%;
+    padding-bottom: 30px;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.energy-today {
+    background: linear-gradient(13deg, #143d69 9.51%, #2b5088 115.72%);
+    display: flex;
+    width: 100%;
+    align-items: start;
+    gap: 20px;
+    color: #fff;
+    justify-content: space-between;
+    padding: 27px 20px 9px;
+}
+
+.energy-today-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.energy-today-icon {
+    width: 23px;
+    aspect-ratio: 1.43;
+    object-fit: auto;
+    object-position: center;
+}
+
+.energy-today-title {
+    margin-top: 20px;
+    font: 600 24px Inter, sans-serif;
+}
+
+.energy-today-description {
+    margin-top: 7px;
+    font: 300 12px Inter, sans-serif;
+}
+
+.energy-today-graph {
+    width: 49px;
+    aspect-ratio: 1;
+    object-fit: auto;
+    object-position: center;
+}
+
+.bill-amount {
+    display: flex;
+    margin-top: 21px;
+    width: 100%;
+    flex-direction: column;
+    padding: 0 19px;
+}
+
+.bill-amount-card {
+    border-radius: 18px;
+    box-shadow: 10px 13px 10px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    color: #0f2c4a;
+    padding: 16px 0;
+}
+
+.bill-amount-header {
+    display: flex;
+    margin-left: 21px;
+    width: 235px;
+    max-width: 100%;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.bill-amount-label {
+    font: 400 12px Inter, sans-serif;
+}
+
+.bill-amount-value {
+    align-self: start;
+    font: 600 15px Inter, sans-serif;
+}
+
+.bill-amount-divider {
+    background-color: #000;
+    align-self: stretch;
+    margin-top: 50px;
+    height: 1px;
+}
+
+.bill-amount-graph {
+    width: 217px;
+    aspect-ratio: 1.92;
+    object-fit: auto;
+    object-position: center;
+    stroke-width: 1px;
+    stroke: #000;
+    border: 1px solid rgba(0, 0, 0, 1);
+    margin-top: 22px;
+    max-width: 100%;
+}
+
+.bill-amount-weeks {
+    display: flex;
+    margin-top: 6px;
+    width: 100%;
+    gap: 20px;
+    font-size: 12px;
+    color: #0f2c4a;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.bill-amount-weeks-left {
+    align-self: start;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.bill-amount-week {
+    font-family: Inter, sans-serif;
+}
+
+.bill-amount-weeks-right {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.energy-usage {
+    border-radius: 18px;
+    box-shadow: 10px 13px 10px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    margin-top: 62px;
+    align-items: start;
+    gap: 12px;
+    justify-content: space-between;
+    padding: 0 22px;
+}
+
+.energy-usage-left {
+    display: flex;
+    margin-top: 26px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.energy-usage-icon {
+    width: 40px;
+    aspect-ratio: 0.58;
+    object-fit: auto;
+    object-position: center;
+}
+
+.energy-usage-graph {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: #e7effa;
+    align-self: stretch;
+    display: flex;
+    margin-top: 74px;
+    flex-direction: column;
+    padding: 29px 18px 7px;
+}
+
+.energy-usage-graph-line {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: #e7effa;
+    height: 1px;
+}
+
+.energy-usage-graph-line:last-child {
+    margin-top: 4px;
+}
+
+.energy-usage-legend {
+    display: flex;
+    gap: 11px;
+}
+
+.energy-usage-legend-item {
+    width: 100%;
+    aspect-ratio: 0.3;
+    object-fit: auto;
+    object-position: center;
+    stroke-width: 1px;
+    stroke: #fff;
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.energy-usage-divider {
+    background-color: rgba(0, 0, 0, 1);
+    align-self: stretch;
+    width: 2px;
+    height: 289px;
+}
+
+.energy-usage-right {
+    display: flex;
+    margin-top: 11px;
+    flex-direction: column;
+}
+
+.appliance-name {
+    color: #0f2c4a;
+    font: 400 12px Inter, sans-serif;
+}
+
+.appliance-usage {
+    border-radius: 15px;
+    background-color: #e7effa;
+    display: flex;
+    margin-top: 12px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1px 0;
+}
+
+.appliance-usage-bar {
+    border-radius: 0 0 7px 7px;
+    background-color: #f58787;
+    z-index: 10;
+    height: 14px;
+}
+
+.appliance-tip {
+    color: #0f2c4a;
+    margin-top: 15px;
+    font: 700 11px Inter, sans-serif;
+}
+
+.appliance-name:last-of-type {
+    margin-top: 79px;
+}
+
+.appliance-usage:last-of-type {
+    margin-top: 20px;
+}
+
+.appliance-usage-bar:last-of-type {
+    background-color: #ffbe71;
+}
+
+.appliance-tip:last-of-type {
+    margin-top: 10px;
+}
